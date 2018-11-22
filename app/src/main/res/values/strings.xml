@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TheVergeTopNews</string>
+    <string name="dataisloading">Data is Loading …</string>
+    <string name="dial">dial</string>
+    <string name="mail">mail</string>
+    <string name="map">map</string>
+    <string name="top">Top</string>
+    <string name="android">Android</string>
+    <string name="apple">Apple</string>
+    <string name="desc">description</string>
+
+</resources>

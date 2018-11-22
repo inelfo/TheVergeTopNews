@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_top_news"
+        android:icon="@android:drawable/ic_dialog_dialer"
+        android:title="@string/top" />
+    <item
+        android:id="@+id/action_android_news"
+        android:icon="@android:drawable/ic_dialog_email"
+        android:title="@string/android" />
+    <item
+        android:id="@+id/action_apple_news"
+        android:icon="@android:drawable/ic_media_next"
+        android:title="@string/apple"/>
+</menu>
