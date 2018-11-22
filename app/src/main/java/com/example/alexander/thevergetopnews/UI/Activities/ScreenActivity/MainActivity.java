@@ -36,17 +36,14 @@ public class MainActivity extends AppCompatActivity implements ScreenContract.Vi
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.action_top_news:
-                        Toast.makeText(MainActivity.this, menuItem.getTitle().toString(), Toast.LENGTH_SHORT).show();
-                            presenter.onItemSelected(menuItem.getTitle().toString());
+                        presenter.onItemSelected(menuItem.getTitle().toString());
                         break;
 
                     case R.id.action_android_news:
-                        Toast.makeText(MainActivity.this, menuItem.getTitle().toString(), Toast.LENGTH_SHORT).show();
                         presenter.onItemSelected(menuItem.getTitle().toString());
                         break;
 
                     case R.id.action_apple_news:
-                        Toast.makeText(MainActivity.this, menuItem.getTitle().toString(), Toast.LENGTH_SHORT).show();
                         presenter.onItemSelected(menuItem.getTitle().toString());
                         break;
                 }
