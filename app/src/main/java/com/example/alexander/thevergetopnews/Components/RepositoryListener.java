@@ -2,6 +2,7 @@ package com.example.alexander.thevergetopnews.Components;
 
 import com.example.alexander.thevergetopnews.Components.dto.News;
 
+// todo Dan: move to network package
 public interface RepositoryListener {
 
     void onFinished(News data);

@@ -7,13 +7,14 @@ import java.util.List;
 
 public class News {
 
-
     @SerializedName("status")
     @Expose
     private String status;
+
     @SerializedName("totalResults")
     @Expose
     private Integer totalResults;
+
     @SerializedName("articles")
     @Expose
     private List<Article> articles = null;

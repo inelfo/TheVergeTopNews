@@ -20,13 +20,12 @@ public class ListNewsFragmentPresenter implements ListNewsFragmentContract.IPres
     public ListNewsFragmentPresenter(final ListNewsFragmentContract.IView view) {
         this.view = view;
         initRepositoryListener();
-        Injection.setComponentProvider(new ComponentProvider());
+        Injection.setComponentProvider(new ComponentProvider()); // todo Dan: move to application class
         provider = Injection.getComponentProvider().getNetwork();
-
-
     }
 
     private void initRepositoryListener() {
+        // todo Dan: you can write it above and make final
         listener = new RepositoryListener() {
             @Override
             public void onFinished(News data) {
@@ -38,7 +37,6 @@ public class ListNewsFragmentPresenter implements ListNewsFragmentContract.IPres
 
             }
         };
-
     }
 
 

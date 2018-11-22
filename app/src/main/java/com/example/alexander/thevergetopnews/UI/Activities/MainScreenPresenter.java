@@ -9,7 +9,7 @@ public class MainScreenPresenter implements ScreenContract.Presenter {
         this.view = view;
         }
 
-        @Override
+    @Override
     public void onItemSelected(String item) {
         view.addFragment(item);
         }

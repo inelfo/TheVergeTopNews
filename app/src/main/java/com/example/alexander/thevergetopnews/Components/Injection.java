@@ -11,7 +11,6 @@ public class Injection {
 
     public static void setComponentProvider(IComponentProvider provider) {
         Injection.provider = provider;
-
     }
 
     public static IComponentProvider getComponentProvider() {

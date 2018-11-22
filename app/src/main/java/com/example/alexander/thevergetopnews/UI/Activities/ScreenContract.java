@@ -11,6 +11,4 @@ public class ScreenContract {
     public interface Presenter {
         void onItemSelected(String item);
     }
-
-
 }

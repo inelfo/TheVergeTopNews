@@ -10,12 +10,10 @@ public class ListNewsFragmentContract {
 
     public interface IPresenter {
 
-        public void  getData(String category);
+        void  getData(String category);
     }
 
-    public interface IFragment {
-
-        }
+    public interface IFragment {}
 
     public interface IHost {}
 }

@@ -18,6 +18,7 @@ import com.example.alexander.thevergetopnews.UI.Activities.TopicActivity;
 
 import java.util.List;
 
+// todo Dan: put in package where it's used
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
     public static final String CONTENT_NEWS = "com.example.alexander.thevergetopnews.View.content_news";
@@ -32,6 +33,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private RequestOptions createGlideOptions() {
         if (options == null)
+            // todo Dan: make constant
             options = new RequestOptions()
                     .centerCrop()
                     .placeholder(R.mipmap.ic_launcher_round)
@@ -48,6 +50,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
+        // todo Dan: better make holder.bindItem(articles.get(position))
         final Article article = articles.get(position);
         holder.name.setText(position + 1 + ". " + article.getTitle());
         holder.text.setText(article.getSource().getName());
@@ -55,12 +58,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         Glide.with(mContext).load(article.getUrlToImage()).apply(createGlideOptions()).into(holder.mImageView);
 
+        // todo Dan: it's a problem for next fixes (single responsibility)
         holder.itemView.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
             public void onClick(View view) {
-
               Intent intent = new Intent(mContext, TopicActivity.class);
               intent.putExtra(CONTENT_NEWS, article.getUrl());
               intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -74,7 +77,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return articles.size();
     }
 
+
+
     class MyViewHolder extends RecyclerView.ViewHolder {
+        // todo Dan: use final modifier where is possible
         private TextView name, text;
         private ImageView mImageView;
 

@@ -9,15 +9,15 @@ import android.webkit.WebViewClient;
 import com.example.alexander.thevergetopnews.R;
 import com.example.alexander.thevergetopnews.UI.RecyclerViewAdapter;
 
+// todo Dan: each module in it's own package
 public class TopicActivity extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        WebView webView= findViewById(R.id.webView);
+        WebView webView = findViewById(R.id.webView);
         webView.setWebChromeClient(new WebChromeClient());
         webView.setWebViewClient(new WebViewClient());
         webView.getSettings().setJavaScriptEnabled(true);
