@@ -2,9 +2,10 @@ package com.example.alexander.thevergetopnews.Components;
 
 import android.util.Log;
 
-import com.example.alexander.thevergetopnews.Components.RepositoryListener;
 import com.example.alexander.thevergetopnews.Components.dto.News;
 import com.example.alexander.thevergetopnews.Components.network.ApiClient;
+import com.example.alexander.thevergetopnews.Components.network.INetwork;
+import com.example.alexander.thevergetopnews.Components.network.RepositoryListener;
 
 import retrofit2.Call;
 import retrofit2.Callback;

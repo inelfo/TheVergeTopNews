@@ -1,9 +1,9 @@
 package com.example.alexander.thevergetopnews.Components;
 
-import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragmentPresenter;
-import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragmentContract;
-import com.example.alexander.thevergetopnews.UI.Activities.MainScreenPresenter;
-import com.example.alexander.thevergetopnews.UI.Activities.ScreenContract;
+import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.ListNewsFragmentPresenter;
+import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.ListNewsFragmentContract;
+import com.example.alexander.thevergetopnews.UI.Activities.ScreenActivity.MainScreenPresenter;
+import com.example.alexander.thevergetopnews.UI.Activities.ScreenActivity.ScreenContract;
 
 public class Injection {
 

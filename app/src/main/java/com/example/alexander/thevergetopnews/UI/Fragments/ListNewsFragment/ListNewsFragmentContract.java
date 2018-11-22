@@ -1,4 +1,4 @@
-package com.example.alexander.thevergetopnews.UI.Fragments;
+package com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment;
 
 import com.example.alexander.thevergetopnews.Components.dto.News;
 

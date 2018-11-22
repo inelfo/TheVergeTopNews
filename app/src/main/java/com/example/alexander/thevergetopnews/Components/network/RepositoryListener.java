@@ -1,4 +1,4 @@
-package com.example.alexander.thevergetopnews.Components;
+package com.example.alexander.thevergetopnews.Components.network;
 
 import com.example.alexander.thevergetopnews.Components.dto.News;
 

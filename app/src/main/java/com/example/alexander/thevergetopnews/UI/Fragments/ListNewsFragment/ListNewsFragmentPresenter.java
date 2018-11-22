@@ -1,11 +1,12 @@
-package com.example.alexander.thevergetopnews.UI.Fragments;
+package com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment;
 
 import com.example.alexander.thevergetopnews.Components.ComponentProvider;
-import com.example.alexander.thevergetopnews.Components.INetwork;
+import com.example.alexander.thevergetopnews.Components.network.INetwork;
 import com.example.alexander.thevergetopnews.Components.Injection;
 
-import com.example.alexander.thevergetopnews.Components.RepositoryListener;
+import com.example.alexander.thevergetopnews.Components.network.RepositoryListener;
 import com.example.alexander.thevergetopnews.Components.dto.News;
+import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.ListNewsFragmentContract;
 
 public class ListNewsFragmentPresenter implements ListNewsFragmentContract.IPresenter {
 

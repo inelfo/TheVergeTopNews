@@ -1,4 +1,4 @@
-package com.example.alexander.thevergetopnews.UI.Activities;
+package com.example.alexander.thevergetopnews.UI.Activities.ScreenActivity;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -9,9 +9,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment;
+import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.ListNewsFragment;
 import com.example.alexander.thevergetopnews.R;
-import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragmentContract;
+import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.ListNewsFragmentContract;
 
 // todo Dan: each module in it's own package
 public class MainActivity extends AppCompatActivity implements ScreenContract.View, ListNewsFragmentContract.IHost {

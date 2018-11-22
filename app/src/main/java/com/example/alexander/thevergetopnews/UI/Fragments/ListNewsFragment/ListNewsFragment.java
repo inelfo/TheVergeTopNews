@@ -1,4 +1,4 @@
-package com.example.alexander.thevergetopnews.UI.Fragments;
+package com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,19 +11,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.alexander.thevergetopnews.Components.Injection;
 
-import com.example.alexander.thevergetopnews.Components.RepositoryListener;
+import com.example.alexander.thevergetopnews.Components.network.RepositoryListener;
 import com.example.alexander.thevergetopnews.Components.dto.News;
 import com.example.alexander.thevergetopnews.R;
-import com.example.alexander.thevergetopnews.UI.RecyclerViewAdapter;
 
 // todo Dan: each module in it's own package
 public class ListNewsFragment extends Fragment implements ListNewsFragmentContract.IView,
         ListNewsFragmentContract.IFragment, RepositoryListener {
-
+    private final static String CATEGORY = "com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.category";
+    private final static String TOP = "com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.top";
     private final ListNewsFragmentContract.IPresenter presenter;
     private ListNewsFragmentContract.IHost host;
     private SwipeRefreshLayout swipeRefreshLayout;
@@ -38,7 +37,7 @@ public class ListNewsFragment extends Fragment implements ListNewsFragmentContra
     public static ListNewsFragment newInstance() {
         ListNewsFragment listNewsFragment = new ListNewsFragment();
         Bundle arg  = new Bundle();
-        arg.putString("category", "Top"); // todo Dan: move key to constant variable
+        arg.putString(CATEGORY, TOP); // todo Dan: move key to constant variable
         listNewsFragment.setArguments(arg);
         return listNewsFragment;
     }
@@ -47,7 +46,7 @@ public class ListNewsFragment extends Fragment implements ListNewsFragmentContra
     public static ListNewsFragment newInstance(String category) {
         ListNewsFragment listNewsFragment = new ListNewsFragment();
         Bundle arg = new Bundle();
-        arg.putString("category", category); // todo Dan: move key to constant variable
+        arg.putString(CATEGORY, category); // todo Dan: move key to constant variable
         listNewsFragment.setArguments(arg);
         return listNewsFragment;
     }
@@ -61,7 +60,7 @@ public class ListNewsFragment extends Fragment implements ListNewsFragmentContra
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                Toast.makeText(getContext(), "Working ....", Toast.LENGTH_SHORT).show();  // todo Dan: use resource, not hardcode!
+                 // todo Dan: use resource, not hardcode!
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
@@ -72,7 +71,11 @@ public class ListNewsFragment extends Fragment implements ListNewsFragmentContra
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // todo Dan: null safety
-        category = getArguments().getString("category");  // todo Dan: move key to constant variable
+        if (getArguments().getString(CATEGORY) !=null) {
+            category = getArguments().getString(CATEGORY);  // todo Dan: move key to constant variable
+        } else {
+            category = TOP;
+        }
         presenter.getData(category);
     }
 

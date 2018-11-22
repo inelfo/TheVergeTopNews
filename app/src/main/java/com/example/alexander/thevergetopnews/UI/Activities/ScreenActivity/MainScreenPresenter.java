@@ -1,4 +1,4 @@
-package com.example.alexander.thevergetopnews.UI.Activities;
+package com.example.alexander.thevergetopnews.UI.Activities.ScreenActivity;
 
 
 public class MainScreenPresenter implements ScreenContract.Presenter {
