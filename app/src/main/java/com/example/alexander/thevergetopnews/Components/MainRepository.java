@@ -23,7 +23,7 @@ class MainRepository  implements INetwork {
             @Override
             public void onResponse(Call<News> call, Response<News> response) {
                 news = response.body();
-                Log.d("!!!!!getNews", (onFinishedListener == null) + "");
+                Log.d("!!!!!getNews111", (onFinishedListener == null) + "");
                 assert onFinishedListener != null; // todo Dan: че за нах?
                 onFinishedListener.onFinished(news);
             }
