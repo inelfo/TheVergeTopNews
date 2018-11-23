@@ -1,4 +1,4 @@
-package com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.TopicFragment;
+package com.example.alexander.thevergetopnews.UI.Fragments.TopicFragment;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

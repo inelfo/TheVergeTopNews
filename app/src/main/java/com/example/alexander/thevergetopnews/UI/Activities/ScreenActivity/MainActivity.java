@@ -16,8 +16,8 @@ import com.example.alexander.thevergetopnews.R;
 
 import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.ListNewsFragment;
 import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.ListNewsFragmentContract;
-import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.TopicFragment.TopicFragment;
-import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.TopicFragment.TopicFragmentContract;
+import com.example.alexander.thevergetopnews.UI.Fragments.TopicFragment.TopicFragment;
+import com.example.alexander.thevergetopnews.UI.Fragments.TopicFragment.TopicFragmentContract;
 
 public class MainActivity extends AppCompatActivity implements ScreenContract.View, ListNewsFragmentContract.IHost, TopicFragmentContract.IHost {
 
