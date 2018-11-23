@@ -18,7 +18,7 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
-    public static final String CONTENT_NEWS = "content_news";
+
     private final AdapterCallback listener;
     private final List<Article> articles;
     private final Context mContext;
@@ -75,9 +75,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }
 
         void bindItem(Article article, int position) {
-            name.setText(position + 1 + ". " + article.getTitle());
+            name.setText(new StringBuffer(String.valueOf(position + 1)).append(". ").append(article.getTitle()));
             text.setText(article.getSource().getName());
-
             Glide.with(mContext).load(article.getUrlToImage()).apply(options).into(mImageView);
         }
     }

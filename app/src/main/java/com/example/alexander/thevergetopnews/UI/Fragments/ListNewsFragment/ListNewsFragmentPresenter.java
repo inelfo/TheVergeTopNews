@@ -8,12 +8,12 @@ import com.example.alexander.thevergetopnews.Components.network.NetworkCallback;
 public class ListNewsFragmentPresenter implements ListNewsFragmentContract.IPresenter {
 
     private final ListNewsFragmentContract.IView view;
-
+    private final INetwork network;
     private final static String TOP_NEWS = "Top";
     private final static String APPLE = "Apple";
     private final static String ANDROID = "Android";
     // todo Dan: network implementation must be injected into constructor from outside
-    private final INetwork network = Injection.getComponentProvider().getNetwork();
+
     private final NetworkCallback<News> listener = new NetworkCallback<News>() {
         @Override
         public void onFinished(News data) {
@@ -25,6 +25,7 @@ public class ListNewsFragmentPresenter implements ListNewsFragmentContract.IPres
     };
 
     public ListNewsFragmentPresenter(final ListNewsFragmentContract.IView view) {
+        network = Injection.getComponentProvider().getNetwork();
         this.view = view;
     }
 

@@ -1,5 +1,6 @@
 package com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -32,6 +33,8 @@ public class ListNewsFragment extends Fragment implements ListNewsFragmentContra
 
     public ListNewsFragment() {
         presenter = Injection.getMainFragmentPresenter(this);
+
+
     }
 
     public static ListNewsFragment newInstance() {
@@ -89,10 +92,15 @@ public class ListNewsFragment extends Fragment implements ListNewsFragmentContra
         recyclerView.setAdapter(adapter);
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        host = (ListNewsFragmentContract.IHost) context;
+    }
 
     @Override
     public void onItemClick(Article article, int position) {
-        Toast.makeText(getContext(), "How can i put List<Articles> from here ?", Toast.LENGTH_SHORT).show();
+
         if(host != null){
             host.showTopic(article.getUrl());
         }
