@@ -1,4 +1,4 @@
-package com.example.alexander.thevergetopnews.Components.network;
+package com.example.alexander.thevergetopnews.components.network;
 
 public interface NetworkCallback<T> {
 

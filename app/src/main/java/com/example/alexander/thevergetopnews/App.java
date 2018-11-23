@@ -2,8 +2,8 @@ package com.example.alexander.thevergetopnews;
 
 import android.app.Application;
 
-import com.example.alexander.thevergetopnews.Components.ComponentProvider;
-import com.example.alexander.thevergetopnews.Components.Injection;
+import com.example.alexander.thevergetopnews.components.ComponentProvider;
+import com.example.alexander.thevergetopnews.components.Injection;
 
 public class App extends Application {
 

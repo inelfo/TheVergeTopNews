@@ -1,6 +1,6 @@
-package com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment;
+package com.example.alexander.thevergetopnews.ui.news.fr.news;
 
-import com.example.alexander.thevergetopnews.Components.dto.News;
+import com.example.alexander.thevergetopnews.components.dto.News;
 
 public class ListNewsFragmentContract {
 

@@ -12,11 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UI.Activities.ScreenActivity.MainActivity">
+        <activity android:name=".ui.news.MainActivity">
 
         </activity>
-        <activity android:name=".UI.Activities.TopicActivity.TopicActivity" />
-        <activity android:name=".UI.Activities.SplashActivity.SplashActivity">
+        <activity android:name=".ui.Activities.TopicActivity.TopicActivity" />
+        <activity android:name=".ui.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,9 +1,9 @@
-package com.example.alexander.thevergetopnews.Components;
+package com.example.alexander.thevergetopnews.components;
 
 import android.app.Application;
 
-import com.example.alexander.thevergetopnews.Components.network.INetwork;
-import com.example.alexander.thevergetopnews.Components.network.NetworkImpl;
+import com.example.alexander.thevergetopnews.components.network.INetwork;
+import com.example.alexander.thevergetopnews.components.network.NetworkImpl;
 
 public class ComponentProvider implements IComponentProvider{
     private final INetwork network = new NetworkImpl();

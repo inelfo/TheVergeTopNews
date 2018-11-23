@@ -1,11 +1,11 @@
-package com.example.alexander.thevergetopnews.UI.Activities.SplashActivity;
+package com.example.alexander.thevergetopnews.ui.splash;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.alexander.thevergetopnews.R;
-import com.example.alexander.thevergetopnews.UI.Activities.ScreenActivity.MainActivity;
+import com.example.alexander.thevergetopnews.ui.news.MainActivity;
 
 public class SplashActivity extends AppCompatActivity {
 

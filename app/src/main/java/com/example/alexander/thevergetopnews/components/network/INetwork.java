@@ -1,7 +1,7 @@
-package com.example.alexander.thevergetopnews.Components.network;
+package com.example.alexander.thevergetopnews.components.network;
 
 
-import com.example.alexander.thevergetopnews.Components.dto.News;
+import com.example.alexander.thevergetopnews.components.dto.News;
 
 
 public interface INetwork {

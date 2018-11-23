@@ -1,6 +1,6 @@
-package com.example.alexander.thevergetopnews.Components.network;
+package com.example.alexander.thevergetopnews.components.network;
 
-import com.example.alexander.thevergetopnews.Components.dto.News;
+import com.example.alexander.thevergetopnews.components.dto.News;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

@@ -1,4 +1,4 @@
-package com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment;
+package com.example.alexander.thevergetopnews.ui.news.fr.news;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -11,13 +11,12 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.example.alexander.thevergetopnews.Components.dto.Article;
 import com.example.alexander.thevergetopnews.R;
+import com.example.alexander.thevergetopnews.components.dto.Article;
 
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
-
 
     private final AdapterCallback listener;
     private final List<Article> articles;

@@ -1,4 +1,4 @@
-package com.example.alexander.thevergetopnews.UI;
+package com.example.alexander.thevergetopnews.ui;
 
 public class Constants {
 

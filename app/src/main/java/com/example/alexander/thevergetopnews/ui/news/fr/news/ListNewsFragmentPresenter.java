@@ -1,18 +1,16 @@
-package com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment;
+package com.example.alexander.thevergetopnews.ui.news.fr.news;
 
-import com.example.alexander.thevergetopnews.Components.Injection;
-import com.example.alexander.thevergetopnews.Components.dto.News;
-import com.example.alexander.thevergetopnews.Components.network.INetwork;
-import com.example.alexander.thevergetopnews.Components.network.NetworkCallback;
+import com.example.alexander.thevergetopnews.components.dto.News;
+import com.example.alexander.thevergetopnews.components.network.INetwork;
+import com.example.alexander.thevergetopnews.components.network.NetworkCallback;
 
 public class ListNewsFragmentPresenter implements ListNewsFragmentContract.IPresenter {
 
-    private final ListNewsFragmentContract.IView view;
-    private final INetwork network;
     private final static String TOP_NEWS = "Top";
     private final static String APPLE = "Apple";
     private final static String ANDROID = "Android";
-    // todo Dan: network implementation must be injected into constructor from outside
+    private final ListNewsFragmentContract.IView view;
+    private final INetwork network;
 
     private final NetworkCallback<News> listener = new NetworkCallback<News>() {
         @Override
@@ -24,8 +22,8 @@ public class ListNewsFragmentPresenter implements ListNewsFragmentContract.IPres
         public void onFailure(Throwable t) {}
     };
 
-    public ListNewsFragmentPresenter(final ListNewsFragmentContract.IView view) {
-        network = Injection.getComponentProvider().getNetwork();
+    public ListNewsFragmentPresenter(final ListNewsFragmentContract.IView view, INetwork network) {
+        this.network = network;
         this.view = view;
     }
 

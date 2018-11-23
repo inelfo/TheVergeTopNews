@@ -1,4 +1,4 @@
-package com.example.alexander.thevergetopnews.Components.dto;
+package com.example.alexander.thevergetopnews.components.dto;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

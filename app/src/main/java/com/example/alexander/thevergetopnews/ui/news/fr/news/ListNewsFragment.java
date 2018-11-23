@@ -1,4 +1,4 @@
-package com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment;
+package com.example.alexander.thevergetopnews.ui.news.fr.news;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -14,10 +14,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.alexander.thevergetopnews.Components.Injection;
-import com.example.alexander.thevergetopnews.Components.dto.Article;
-import com.example.alexander.thevergetopnews.Components.dto.News;
 import com.example.alexander.thevergetopnews.R;
+import com.example.alexander.thevergetopnews.components.Injection;
+import com.example.alexander.thevergetopnews.components.dto.Article;
+import com.example.alexander.thevergetopnews.components.dto.News;
 
 public class ListNewsFragment extends Fragment implements ListNewsFragmentContract.IView,
         ListNewsFragmentContract.IFragment, AdapterCallback {
@@ -29,11 +29,8 @@ public class ListNewsFragment extends Fragment implements ListNewsFragmentContra
     private RecyclerView recyclerView;
     private RecyclerViewAdapter adapter;
 
-
     public ListNewsFragment() {
         presenter = Injection.getMainFragmentPresenter(this);
-
-
     }
 
     public static ListNewsFragment newInstance() {
@@ -99,7 +96,6 @@ public class ListNewsFragment extends Fragment implements ListNewsFragmentContra
 
     @Override
     public void onItemClick(Article article, int position) {
-
         if(host != null){
             host.showTopic(article.getUrl());
         }
