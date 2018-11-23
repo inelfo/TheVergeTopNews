@@ -13,24 +13,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
-        app:layout_scrollFlags="scroll|enterAlways|snap"
-        app:elevation="0dp">
-
-        <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:elevation="0dp"
         app:layout_scrollFlags="scroll|enterAlways|snap">
 
-        <ImageView
-            android:id="@+id/imageView2"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="33dp"
-            android:layout_margin="8dp"
-            android:contentDescription="@string/desc"
-            app:srcCompat="@drawable/logo_verge" />
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_scrollFlags="scroll|enterAlways|snap">
 
-    </android.support.v7.widget.Toolbar>
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_margin="8dp"
+                android:contentDescription="@string/desc"
+                app:srcCompat="@drawable/logo_verge" />
+
+        </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 

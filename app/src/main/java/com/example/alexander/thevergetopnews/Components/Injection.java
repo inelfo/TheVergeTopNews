@@ -4,6 +4,8 @@ import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.ListN
 import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.ListNewsFragmentContract;
 import com.example.alexander.thevergetopnews.UI.Activities.ScreenActivity.MainScreenPresenter;
 import com.example.alexander.thevergetopnews.UI.Activities.ScreenActivity.ScreenContract;
+import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.TopicFragment.TopicFragmentContract;
+import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.TopicFragment.TopicFragmentPresenter;
 
 public class Injection {
 
@@ -23,5 +25,9 @@ public class Injection {
 
     public static ListNewsFragmentContract.IPresenter getMainFragmentPresenter(ListNewsFragmentContract.IView view) {
         return new ListNewsFragmentPresenter(view);
+    }
+
+    public static TopicFragmentContract.IPresenter  getTopicFragmentPresenter(TopicFragmentContract.IView view) {
+        return new TopicFragmentPresenter(view);
     }
 }
