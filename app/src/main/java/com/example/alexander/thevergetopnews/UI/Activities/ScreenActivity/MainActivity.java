@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import com.example.alexander.thevergetopnews.R;
+import com.example.alexander.thevergetopnews.UI.Activities.TopicActivity.TopicActivity;
 import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.ListNewsFragment;
 import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.ListNewsFragmentContract;
 
@@ -16,15 +17,15 @@ public class MainActivity extends AppCompatActivity implements ScreenContract.Vi
 
     private MainScreenPresenter presenter;
 
+    public MainActivity() {
+        // todo Dan: use Injection to create presenters
+        presenter = new MainScreenPresenter(this);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        presenter = new MainScreenPresenter(this);
-
-
 
         addFragment(ListNewsFragment.newInstance());
         initBottomNavigationView();
@@ -64,5 +65,10 @@ public class MainActivity extends AppCompatActivity implements ScreenContract.Vi
         // todo Dan: wtf? you have addFragment method
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().add(R.id.container, listNewsFragment).commit();
+    }
+
+    @Override
+    public void showTopic(String url) {
+        startActivity(TopicActivity.newIntent(this, url));
     }
 }

@@ -9,6 +9,10 @@ public class ListNewsFragmentPresenter implements ListNewsFragmentContract.IPres
 
     private final ListNewsFragmentContract.IView view;
 
+    private final static String TOP_NEWS = "Top";
+    private final static String APPLE = "Apple";
+    private final static String ANDROID = "Android";
+    // todo Dan: network implementation must be injected into constructor from outside
     private final INetwork network = Injection.getComponentProvider().getNetwork();
     private final NetworkCallback<News> listener = new NetworkCallback<News>() {
         @Override
@@ -19,14 +23,9 @@ public class ListNewsFragmentPresenter implements ListNewsFragmentContract.IPres
         @Override
         public void onFailure(Throwable t) {}
     };
-    private final static String TOP_NEWS = "Top";
-    private final static String APPLE = "Apple";
-    private final static String ANDROID = "Android";
 
     public ListNewsFragmentPresenter(final ListNewsFragmentContract.IView view) {
         this.view = view;
-        // todo Dan: move to application class
-         // todo Dan: хрень!!
     }
 
     @Override
@@ -45,10 +44,5 @@ public class ListNewsFragmentPresenter implements ListNewsFragmentContract.IPres
                 network.getTopNews(listener);
                 break;
         }
-    }
-
-    @Override
-    public void onClickedItem(int position) {
-        view.openTopic(position);
     }
 }

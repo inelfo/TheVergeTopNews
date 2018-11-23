@@ -15,14 +15,13 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.alexander.thevergetopnews.Components.Injection;
+import com.example.alexander.thevergetopnews.Components.dto.Article;
 import com.example.alexander.thevergetopnews.Components.dto.News;
 import com.example.alexander.thevergetopnews.R;
 
 public class ListNewsFragment extends Fragment implements ListNewsFragmentContract.IView,
         ListNewsFragmentContract.IFragment, AdapterCallback {
-    // todo Dan: it's private, why you need so long value?
     private final static String CATEGORY = "category";
-    // todo Dan: it's private, why you need so long value?
     private final static String TOP = "top";
     private final ListNewsFragmentContract.IPresenter presenter;
     private ListNewsFragmentContract.IHost host;
@@ -90,15 +89,12 @@ public class ListNewsFragment extends Fragment implements ListNewsFragmentContra
         recyclerView.setAdapter(adapter);
     }
 
+
     @Override
-    public void openTopic(int position) {
+    public void onItemClick(Article article, int position) {
         Toast.makeText(getContext(), "How can i put List<Articles> from here ?", Toast.LENGTH_SHORT).show();
-    }
-
-
-    @Override
-    public void onClick(int position) {
-
-        presenter.onClickedItem(position);
+        if(host != null){
+            host.showTopic(article.getUrl());
+        }
     }
 }
