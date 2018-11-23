@@ -18,9 +18,9 @@ import com.example.alexander.thevergetopnews.UI.Activities.TopicActivity.TopicAc
 
 import java.util.List;
 
-// todo Dan: put in package where it's used
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
+    // todo Dan: why so long?
     public static final String CONTENT_NEWS = "com.example.alexander.thevergetopnews.View.content_news";
     private List<Article> articles;
     private Context mContext;
@@ -29,13 +29,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             .placeholder(R.mipmap.ic_launcher_round)
             .error(R.mipmap.ic_launcher);
 
-    public RecyclerViewAdapter(List<Article> articles, Context context) {
+    RecyclerViewAdapter(List<Article> articles, Context context) {
         this.articles = articles;
         mContext = context;
-
     }
-
-
 
     @NonNull
     @Override
@@ -77,8 +74,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        // todo Dan: use final modifier where is possible
-        private  final TextView name, text;
+        private final TextView name, text;
         private final ImageView mImageView;
 
         MyViewHolder(View itemView) {

@@ -1,13 +1,13 @@
 package com.example.alexander.thevergetopnews.Components;
 
-
 import com.example.alexander.thevergetopnews.Components.network.INetwork;
+import com.example.alexander.thevergetopnews.Components.network.NetworkImpl;
 
-// todo Dan: clean: unused imports, modifiers etc
 public class ComponentProvider implements IComponentProvider{
+    private final INetwork network = new NetworkImpl();
 
     @Override
     public INetwork getNetwork() {
-        return new MainRepository();
+        return network;
     }
 }

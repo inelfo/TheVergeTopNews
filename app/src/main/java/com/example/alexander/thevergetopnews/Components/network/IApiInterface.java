@@ -16,6 +16,6 @@ public interface IApiInterface {
 
         @GET("everything?q=android&apiKey=23e308f40dc4407f8d3d743173e66218")
         Call<News> getAndroidNews();
-    }
+}
 
 
