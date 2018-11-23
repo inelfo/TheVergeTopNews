@@ -1,4 +1,4 @@
-package com.example.alexander.thevergetopnews.UI.Activities;
+package com.example.alexander.thevergetopnews.UI.Activities.ScreenActivity;
 
 
 public class MainScreenPresenter implements ScreenContract.Presenter {
@@ -9,7 +9,7 @@ public class MainScreenPresenter implements ScreenContract.Presenter {
         this.view = view;
         }
 
-        @Override
+    @Override
     public void onItemSelected(String item) {
         view.addFragment(item);
         }

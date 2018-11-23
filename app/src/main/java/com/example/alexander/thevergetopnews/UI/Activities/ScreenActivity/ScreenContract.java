@@ -1,4 +1,4 @@
-package com.example.alexander.thevergetopnews.UI.Activities;
+package com.example.alexander.thevergetopnews.UI.Activities.ScreenActivity;
 
 public class ScreenContract {
 
@@ -11,6 +11,4 @@ public class ScreenContract {
     public interface Presenter {
         void onItemSelected(String item);
     }
-
-
 }

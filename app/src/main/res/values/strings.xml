@@ -8,5 +8,6 @@
     <string name="android">Android</string>
     <string name="apple">Apple</string>
     <string name="desc">description</string>
+    <string name="desc1">description</string>
 
 </resources>

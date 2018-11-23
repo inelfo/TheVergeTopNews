@@ -1,11 +1,12 @@
-package com.example.alexander.thevergetopnews.UI.Fragments;
+package com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment;
 
 import com.example.alexander.thevergetopnews.Components.ComponentProvider;
-import com.example.alexander.thevergetopnews.Components.INetwork;
+import com.example.alexander.thevergetopnews.Components.network.INetwork;
 import com.example.alexander.thevergetopnews.Components.Injection;
 
-import com.example.alexander.thevergetopnews.Components.RepositoryListener;
+import com.example.alexander.thevergetopnews.Components.network.RepositoryListener;
 import com.example.alexander.thevergetopnews.Components.dto.News;
+import com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.ListNewsFragmentContract;
 
 public class ListNewsFragmentPresenter implements ListNewsFragmentContract.IPresenter {
 
@@ -20,13 +21,12 @@ public class ListNewsFragmentPresenter implements ListNewsFragmentContract.IPres
     public ListNewsFragmentPresenter(final ListNewsFragmentContract.IView view) {
         this.view = view;
         initRepositoryListener();
-        Injection.setComponentProvider(new ComponentProvider());
+        Injection.setComponentProvider(new ComponentProvider()); // todo Dan: move to application class
         provider = Injection.getComponentProvider().getNetwork();
-
-
     }
 
     private void initRepositoryListener() {
+        // todo Dan: you can write it above and make final
         listener = new RepositoryListener() {
             @Override
             public void onFinished(News data) {
@@ -38,7 +38,6 @@ public class ListNewsFragmentPresenter implements ListNewsFragmentContract.IPres
 
             }
         };
-
     }
 
 
