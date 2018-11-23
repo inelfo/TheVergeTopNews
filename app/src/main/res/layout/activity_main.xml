@@ -52,6 +52,8 @@
         app:menu="@menu/bottom_menu"
         android:background="@android:color/white"
         app:itemTextColor="@drawable/nav_item_color_state"
+        app:itemIconTint="@drawable/nav_item_color_state"
+        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
         />
 
 </android.support.design.widget.CoordinatorLayout>

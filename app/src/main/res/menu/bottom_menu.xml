@@ -3,14 +3,14 @@
 
     <item
         android:id="@+id/action_top_news"
-        android:icon="@android:drawable/ic_dialog_dialer"
+        android:icon="@drawable/top_icon"
         android:title="@string/top" />
     <item
         android:id="@+id/action_android_news"
-        android:icon="@android:drawable/ic_dialog_email"
+        android:icon="@drawable/android_logo"
         android:title="@string/android" />
     <item
         android:id="@+id/action_apple_news"
-        android:icon="@android:drawable/ic_media_next"
-        android:title="@string/apple"/>
+        android:icon="@drawable/apple_logo"
+        android:title="@string/apple" />
 </menu>

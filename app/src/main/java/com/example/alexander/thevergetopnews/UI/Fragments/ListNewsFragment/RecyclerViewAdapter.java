@@ -21,7 +21,8 @@ import java.util.List;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
     // todo Dan: why so long?
-    public static final String CONTENT_NEWS = "com.example.alexander.thevergetopnews.View.content_news";
+    private AdapterCallback listener;
+    public static final String CONTENT_NEWS = "content_news";
     private List<Article> articles;
     private Context mContext;
     private  final RequestOptions options = new RequestOptions()
@@ -29,16 +30,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             .placeholder(R.mipmap.ic_launcher_round)
             .error(R.mipmap.ic_launcher);
 
-    RecyclerViewAdapter(List<Article> articles, Context context) {
+    RecyclerViewAdapter(List<Article> articles, Context context, AdapterCallback listener) {
         this.articles = articles;
         mContext = context;
+        this.listener = listener ;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_view_item, parent, false );
-        return new MyViewHolder(v);
+        return new MyViewHolder(v, listener);
     }
 
     @Override
@@ -53,17 +55,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         Glide.with(mContext).load(article.getUrlToImage()).apply(options).into(holder.mImageView);
 
         // todo Dan: it's a problem for next fixes (single responsibility)
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-
-
-            @Override
-            public void onClick(View view) {
-              Intent intent = new Intent(mContext, TopicActivity.class);
-              intent.putExtra(CONTENT_NEWS, article.getUrl());
-              intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-              mContext.startActivity(intent);
-            }
-        });
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//
+//
+//            @Override
+//            public void onClick(View view) {
+//              Intent intent = new Intent(mContext, TopicActivity.class);
+//              intent.putExtra(CONTENT_NEWS, article.getUrl());
+//              intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//              mContext.startActivity(intent);
+//            }
+//        });
     }
 
     @Override
@@ -73,15 +75,23 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
 
 
-    class MyViewHolder extends RecyclerView.ViewHolder {
+    class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private final TextView name, text;
         private final ImageView mImageView;
+        private AdapterCallback listener;
 
-        MyViewHolder(View itemView) {
+        MyViewHolder(View itemView, AdapterCallback listener) {
             super(itemView);
+            this.listener = listener;
             name = itemView.findViewById(R.id.title);
             text = itemView.findViewById(R.id.article_text);
             mImageView = itemView.findViewById(R.id.image_article);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            listener.onClick(getAdapterPosition());
         }
     }
 }

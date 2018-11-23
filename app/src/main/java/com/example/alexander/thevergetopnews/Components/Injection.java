@@ -17,7 +17,7 @@ public class Injection {
         return provider;
     }
 
-    public static ScreenContract.Presenter getMainScteenPresenter(ScreenContract.View view) {
+    public static ScreenContract.Presenter getMainScreenPresenter(ScreenContract.View view) {
         return new MainScreenPresenter(view);
     }
 

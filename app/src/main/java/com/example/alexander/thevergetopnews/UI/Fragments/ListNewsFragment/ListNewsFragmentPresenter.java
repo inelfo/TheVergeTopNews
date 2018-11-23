@@ -1,6 +1,5 @@
 package com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment;
 
-import com.example.alexander.thevergetopnews.Components.ComponentProvider;
 import com.example.alexander.thevergetopnews.Components.Injection;
 import com.example.alexander.thevergetopnews.Components.dto.News;
 import com.example.alexander.thevergetopnews.Components.network.INetwork;
@@ -10,7 +9,7 @@ public class ListNewsFragmentPresenter implements ListNewsFragmentContract.IPres
 
     private final ListNewsFragmentContract.IView view;
 
-    private final INetwork provider;
+    private final INetwork network = Injection.getComponentProvider().getNetwork();
     private final NetworkCallback<News> listener = new NetworkCallback<News>() {
         @Override
         public void onFinished(News data) {
@@ -26,25 +25,30 @@ public class ListNewsFragmentPresenter implements ListNewsFragmentContract.IPres
 
     public ListNewsFragmentPresenter(final ListNewsFragmentContract.IView view) {
         this.view = view;
-        Injection.setComponentProvider(new ComponentProvider()); // todo Dan: move to application class
-        provider = Injection.getComponentProvider().getNetwork(); // todo Dan: хрень!!
+        // todo Dan: move to application class
+         // todo Dan: хрень!!
     }
 
     @Override
     public void getData(String category) {
         switch (category) {
             case TOP_NEWS:
-                provider.getTopNews(listener);
+                network.getTopNews(listener);
                 break;
             case APPLE:
-                provider.getAppleNews(listener);
+                network.getAppleNews(listener);
                 break;
             case ANDROID:
-                provider.getAndroidNews(listener);
+                network.getAndroidNews(listener);
                 break;
             default:
-                provider.getTopNews(listener);
+                network.getTopNews(listener);
                 break;
         }
+    }
+
+    @Override
+    public void onClickedItem(int position) {
+        view.openTopic(position);
     }
 }

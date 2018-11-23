@@ -12,22 +12,24 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.alexander.thevergetopnews.Components.Injection;
 import com.example.alexander.thevergetopnews.Components.dto.News;
 import com.example.alexander.thevergetopnews.R;
 
 public class ListNewsFragment extends Fragment implements ListNewsFragmentContract.IView,
-        ListNewsFragmentContract.IFragment {
+        ListNewsFragmentContract.IFragment, AdapterCallback {
     // todo Dan: it's private, why you need so long value?
-    private final static String CATEGORY = "com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.category";
+    private final static String CATEGORY = "category";
     // todo Dan: it's private, why you need so long value?
-    private final static String TOP = "com.example.alexander.thevergetopnews.UI.Fragments.ListNewsFragment.top";
+    private final static String TOP = "top";
     private final ListNewsFragmentContract.IPresenter presenter;
     private ListNewsFragmentContract.IHost host;
     private SwipeRefreshLayout swipeRefreshLayout;
     private RecyclerView recyclerView;
     private RecyclerViewAdapter adapter;
+
 
     public ListNewsFragment() {
         presenter = Injection.getMainFragmentPresenter(this);
@@ -61,6 +63,8 @@ public class ListNewsFragment extends Fragment implements ListNewsFragmentContra
                 swipeRefreshLayout.setRefreshing(false);
             }
         });
+
+
        return v;
     }
 
@@ -81,8 +85,20 @@ public class ListNewsFragment extends Fragment implements ListNewsFragmentContra
     @Override
     public void showList(News news) {
         Log.d("showList", news.toString());
-        adapter = new RecyclerViewAdapter(news.getArticles(), getContext());
+        adapter = new RecyclerViewAdapter(news.getArticles(), getContext(), this);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void openTopic(int position) {
+        Toast.makeText(getContext(), "How can i put List<Articles> from here ?", Toast.LENGTH_SHORT).show();
+    }
+
+
+    @Override
+    public void onClick(int position) {
+
+        presenter.onClickedItem(position);
     }
 }
