@@ -21,7 +21,11 @@ public class MainActivity extends AppCompatActivity implements ScreenContract.Vi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         presenter = new MainScreenPresenter(this);
+
+
+
         addFragment(ListNewsFragment.newInstance());
         initBottomNavigationView();
     }
