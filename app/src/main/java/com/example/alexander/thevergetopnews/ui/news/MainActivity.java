@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -34,16 +35,19 @@ public class MainActivity extends AppCompatActivity implements ScreenContract.Vi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         addFragment(ListNewsFragment.newInstance(), false, null);
+
         initViews();
         initBottomNavigationView();
     }
 
     private void initViews() {
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
+     bottomNavigationView = findViewById(R.id.bottom_navigation);
         appBarLayout = findViewById(R.id.appBarLayout);
         toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+
     }
 
     private void initBottomNavigationView() {
@@ -63,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements ScreenContract.Vi
                         presenter.onItemSelected(menuItem.getTitle().toString());
                         break;
                 }
-                return false;
+                return true;
             }
         });
     }
@@ -93,5 +97,15 @@ public class MainActivity extends AppCompatActivity implements ScreenContract.Vi
         bottomNavigationView.setVisibility(visibility);
         appBarLayout.setVisibility(visibility);
         toolbar.setVisibility(visibility);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        toolbar.inflateMenu(R.menu.search_menu);
+
+        return super.onCreateOptionsMenu(menu);
+
+
     }
 }
