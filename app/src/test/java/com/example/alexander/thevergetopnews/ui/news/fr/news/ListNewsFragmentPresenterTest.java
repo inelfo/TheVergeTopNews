@@ -41,18 +41,6 @@ public class ListNewsFragmentPresenterTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         presenter = new ListNewsFragmentPresenter(mockView, mockNetwork);
-        mockListener = new NetworkCallback() {
-            @Override
-            public void onFinished(Object data) {
-
-            }
-
-            @Override
-            public void onFailure(Throwable t) {
-
-            }
-        };
-
         }
 
     @Test
